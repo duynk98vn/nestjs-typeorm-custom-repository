@@ -1,6 +1,6 @@
 {
 	"name": "nestjs-typeorm-custom-repository",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Typeorm custom repository module for Nest framework (node.js)",
 	"author": "duynk98vn",
 	"license": "MIT",
