@@ -5,9 +5,10 @@ index.ts
 package-lock.json
 tslint.json
 tsconfig.json
+docker-compose.yml
 .prettierrc
-.docker-compose.yml
 .eslintrc.js
+.eslintignore
 .release-it.json
 .husky
 
