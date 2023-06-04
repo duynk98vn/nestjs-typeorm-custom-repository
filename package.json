@@ -5,6 +5,10 @@
 	"author": "duynk98vn",
 	"license": "MIT",
 	"url": "https://github.com/duynk98vn/nestjs-typeorm-custom-repository#readme",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
 	"scripts": {
 		"build": "rimraf -rf dist && tsc -p tsconfig.json",
 		"format": "prettier --write \"{lib,tests}/**/*.ts\"",

@@ -10,11 +10,5 @@
 	"github": {
 		"release": true,
 		"releaseName": "Release v${version}"
-	},
-	"publishConfig": {
-		"access": "public",
-		"publishConfig": {
-			"access": "public"
-		}
 	}
 }
