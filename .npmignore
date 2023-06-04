@@ -1,0 +1,15 @@
+# source
+lib
+tests
+index.ts
+package-lock.json
+tslint.json
+tsconfig.json
+.prettierrc
+.docker-compose.yml
+.eslintrc.js
+.release-it.json
+.husky
+
+# github
+.github
