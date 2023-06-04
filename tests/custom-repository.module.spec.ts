@@ -5,23 +5,23 @@ import { AppModule } from './src/app.module';
 import { PhotoService } from './src/photo/photo.service';
 
 describe('CustomRepositoryModule', () => {
-	let photoService: PhotoService;
+  let photoService: PhotoService;
 
-	beforeEach(async () => {
-		const module = await Test.createTestingModule({
-			imports: [AppModule],
-		}).compile();
+  beforeEach(async () => {
+    const module = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
 
-		photoService = module.get<PhotoService>(PhotoService);
-	});
+    photoService = module.get<PhotoService>(PhotoService);
+  });
 
-	it('Inject default connect', async () => {
-		expect(photoService.customPhotoRepository).toBeInstanceOf(Repository);
-		expect(await photoService.findAllWithCustomRepo()).toEqual(expect.arrayContaining([]));
-	});
+  it('Inject default connect', async () => {
+    expect(photoService.customPhotoRepository).toBeInstanceOf(Repository);
+    expect(await photoService.findAllWithCustomRepo()).toEqual(expect.arrayContaining([]));
+  });
 
-	it('Inject specific connection', async () => {
-		expect(photoService.customPhotoRepository2).toBeInstanceOf(Repository);
-		expect(await photoService.findAllWithCustomRepo2()).toEqual(expect.arrayContaining([]));
-	});
+  it('Inject specific connection', async () => {
+    expect(photoService.customPhotoRepository2).toBeInstanceOf(Repository);
+    expect(await photoService.findAllWithCustomRepo2()).toEqual(expect.arrayContaining([]));
+  });
 });

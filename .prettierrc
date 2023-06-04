@@ -1,14 +1,15 @@
 {
-	"singleQuote": true,
-	"trailingComma": "all",
-	"semi": true,
-	"printWidth": 120,
-	"tabWidth": 4,
-	"useTabs": true,
-	"arrowParens": "avoid",
-	"importOrder": ["^[./]"],
-	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true,
-	"importOrderCaseInsensitive": true,
-	"importOrderParserPlugins": ["classProperties", "decorators-legacy", "typescript"]
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "singleQuote": true,
+  "printWidth": 120,
+  "importOrder": ["^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "importOrderParserPlugins": [
+    "classProperties",
+    "decorators-legacy",
+    "typescript"
+  ]
 }
