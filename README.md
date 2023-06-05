@@ -55,7 +55,7 @@ This `CustomPhotoRepository` below uses the `@EntityRepository()` decorator to m
 `photo.repository.ts`
 
 ```typescript
-import { EntityRepository } from '@nestjs/typeorm-custom-repository';
+import { EntityRepository } from 'nestjs-typeorm-custom-repository';
 import { Repository } from 'typeorm';
 
 import { Photo } from './photo.entity';
@@ -68,7 +68,7 @@ export class CustomPhotoRepository extends Repository<Photo> {}
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { CustomRepositoryModule } from '@nestjs/typeorm-custom-repository';
+import { CustomRepositoryModule } from 'nestjs-typeorm-custom-repository';
 
 import { CustomPhotoRepository } from './photo.repository';
 import { PhotoService } from './photo.service';
@@ -89,7 +89,7 @@ This module uses the `forFeature()` method to define which repositories are regi
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { InjectCustomRepository } from '@nestjs/typeorm-custom-repository';
+import { InjectCustomRepository } from 'nestjs-typeorm-custom-repository';
 
 import { Photo } from './photo.entity';
 import { CustomPhotoRepository } from './photo.repository';
