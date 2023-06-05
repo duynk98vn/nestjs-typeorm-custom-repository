@@ -5,10 +5,10 @@ Typeorm custom repository module for Nest framework (node.js) with `typeorm` v0.
 ## Installation
 
 ```bash
-$ npm i @nestjs/typeorm-custom-repository
+$ npm i nestjs-typeorm-custom-repository
 $ npm i @nestjs/typeorm typeorm
 #or
-$ yarn add @nestjs/typeorm-custom-repository
+$ yarn add nestjs-typeorm-custom-repository
 $ yarn add @nestjs/typeorm typeorm
 ```
 
@@ -27,25 +27,25 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Photo } from './photo/photo.entity';
 
 @Module({
-	imports: [
-        // default connection
-		TypeOrmModule.forRoot({
-			type: 'mysql',
-			host: 'localhost',
-			port: 3306,
-			entities: [Photo],
-			...
-		}),
-        // and another connection with named `connection_2`
-		TypeOrmModule.forRoot({
-			name: 'connection_2',
-			type: 'mysql',
-			host: 'localhost',
-			port: 3306,
-			entities: [Photo],
-			...
-		}),
-	],
+  imports: [
+    // default connection
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      entities: [Photo],
+	  ...
+    }),
+    // and another connection with named `connection_2`
+    TypeOrmModule.forRoot({
+      name: 'connection_2',
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      entities: [Photo],
+	  ...
+    }),
+  ],
 })
 export class AppModule {}
 ```
@@ -74,11 +74,11 @@ import { CustomPhotoRepository } from './photo.repository';
 import { PhotoService } from './photo.service';
 
 @Module({
-	imports: [
-		CustomRepositoryModule.forFeature([CustomPhotoRepository]),
-		CustomRepositoryModule.forFeature([CustomPhotoRepository], 'connection_2'),
-	],
-	providers: [PhotoService],
+  imports: [
+    CustomRepositoryModule.forFeature([CustomPhotoRepository]),
+    CustomRepositoryModule.forFeature([CustomPhotoRepository], 'connection_2'),
+  ],
+  providers: [PhotoService],
 })
 export class PhotoModule {}
 ```
@@ -96,13 +96,13 @@ import { CustomPhotoRepository } from './photo.repository';
 
 @Injectable()
 export class PhotoService {
-	constructor(
-		private readonly customPhotoRepository: CustomPhotoRepository,
-		@InjectCustomRepository(CustomPhotoRepository, 'connection_2')
-		private readonly customPhotoRepository2: CustomPhotoRepository,
-	) {}
+  constructor(
+    private readonly customPhotoRepository: CustomPhotoRepository,
+    @InjectCustomRepository(CustomPhotoRepository, 'connection_2')
+    private readonly customPhotoRepository2: CustomPhotoRepository,
+  ) {}
 
-	...
+  ...
 }
 ```
 
