@@ -56,5 +56,16 @@
   },
   "lint-staged": {
     "**/*.{ts,json}": []
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duynk98vn/nestjs-typeorm-custom-repository"
+  },
+  "homepage": "https://github.com/duynk98vn/nestjs-typeorm-custom-repository#readme",
+  "keywords": [
+    "nestjs",
+    "typeorm",
+    "@nestjs/typeorm",
+    "custom-repository"
+  ]
 }
