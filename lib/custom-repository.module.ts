@@ -13,9 +13,7 @@ function getProviders(repositories: Repository[], dataSource?: string | DataSour
       module: CustomRepositoryModule,
       provide: getCustomRepositoryToken(repository, dataSource),
       useFactory: (dataSource: DataSource) => {
-        return dataSource.options.type === 'mongodb'
-          ? dataSource.getMongoRepository(entity).extend(new repository(entity, dataSource.manager))
-          : dataSource.getRepository(entity).extend(new repository(entity, dataSource.manager));
+        return new repository(entity, dataSource.manager);
       },
       inject: [getDataSourceToken(dataSource)],
     } as Provider<any>;
